@@ -11,6 +11,7 @@ on:
     paths:
       - Dockerfile
       - i686-elf-tools.sh
+  workflow_dispatch:
 
 jobs:
   push_to_registry:
