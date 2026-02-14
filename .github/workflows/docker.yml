@@ -16,24 +16,28 @@ jobs:
   push_to_registry:
     name: Update Docker Image
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v4
-      
-      - name: Login to Docker Hub
+
+      - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-      
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: lordmilko/i686-elf-tools
+          images: ghcr.io/regularrabbit05/i686-elf-tools
           tags: |
             type=raw,value=latest
-      
+
       - name: Build and push Docker Image
         uses: docker/build-push-action@v5
         with:
