@@ -3,7 +3,7 @@ Cross compiling an i386- or i686-elf Win32 toolchain is an outstandingly complic
 
 This repo provides a set of precompiled binaries to those who want to use get what they came for and move on (an i686-elf toolchain that, **unlike others on the internet, includes cc1 and GDB**), as well as a set of instructions for those that would like to build these things themselves. Also featured are a set of instructions for those that wish to install these tools on Mac OS X or Linux.
 
-[Pre-compiled binaries can be found here!](https://github.com/lordmilko/i686-elf-tools/releases)
+[Pre-compiled binaries can be found here!](https://github.com/RegularRabbit05/i686-elf-tools/releases)
 
 [Information on using i686-elf-tools in Visual Studio can be found here!](https://github.com/lordmilko/VSKernelDev)
 
